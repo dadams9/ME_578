@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"Devin Adams",
+	"description":	{
+		"":	"Lab 1 Creating scripts example following the tutorial video"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
