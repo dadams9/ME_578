@@ -1,0 +1,8 @@
+ MIDACO - SOLUTION
+ -----------------
+
+ This file saves the current best solution X found by MIDACO.
+ This file is updated after every PRINTEVAL function evaluation,
+ if X has been improved.
+
+
