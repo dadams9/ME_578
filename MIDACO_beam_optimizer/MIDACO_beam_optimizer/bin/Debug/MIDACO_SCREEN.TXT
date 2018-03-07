@@ -1,0 +1,19 @@
+
+ MIDACO 6.0    (www.midaco-solver.com)
+ -------------------------------------
+
+ LICENSE-KEY:  MIDACO_LIMITED_VERSION___[CREATIVE_COMMONS_BY-NC-ND_LICENSE]
+
+ ----------------------------------------
+ | OBJECTIVES    1 | PARALLEL         1 |
+ |--------------------------------------|
+ | N             2 | MAXEVAL      10000 |
+ | NI            0 | MAXTIME      86400 |
+ | M             5 | PRINTEVAL     1000 |
+ | ME            0 | SAVE2FILE        1 |
+ |--------------------------------------|
+ | PARAMETER:    All by default (0)     |
+ ----------------------------------------
+
+ [     EVAL,    TIME]        OBJECTIVE FUNCTION VALUE         VIOLATION OF G(X)
+ ------------------------------------------------------------------------------

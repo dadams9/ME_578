@@ -1,0 +1,4 @@
+Volume of Optimal Beam = 1.26427872049214m^3
+Length = 2m
+Width = 0.999000125518812m
+Height = 0.632772052874148m

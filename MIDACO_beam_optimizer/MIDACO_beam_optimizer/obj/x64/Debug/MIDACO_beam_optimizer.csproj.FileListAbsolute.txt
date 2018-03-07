@@ -1,0 +1,13 @@
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\MIDACO_beam_optimizer.exe.config
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\MIDACO_beam_optimizer.exe
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\MIDACO_beam_optimizer.pdb
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\x64\Debug\MIDACO_beam_optimizer.exe
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\x64\Debug\MIDACO_beam_optimizer.pdb
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\MIDACO_beam_optimizer.exe.config
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\x64\Debug\MIDACO_beam_optimizer.exe
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\x64\Debug\MIDACO_beam_optimizer.pdb
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\MIDACO_beam_optimizer.exe
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\MIDACO_beam_optimizer.pdb
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\System.Net.Http.dll
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\x64\Debug\System.Net.Http.xml
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\x64\Debug\MIDACO_beam_optimizer.csprojResolveAssemblyReference.cache

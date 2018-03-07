@@ -1,0 +1,20 @@
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\MIDACO_beam_optimizer.exe.config
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\MIDACO_beam_optimizer.exe
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\MIDACO_beam_optimizer.pdb
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\Debug\MIDACO_beam_optimizer.csprojResolveAssemblyReference.cache
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\Debug\MIDACO_beam_optimizer.exe
+C:\Users\Devin\Documents\School\ME 578\lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\Debug\MIDACO_beam_optimizer.pdb
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\MIDACO_beam_optimizer.exe.config
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\Debug\MIDACO_beam_optimizer.exe
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\Debug\MIDACO_beam_optimizer.pdb
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\MIDACO_beam_optimizer.exe
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\MIDACO_beam_optimizer.pdb
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\mscorlib.dll
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\System.Net.Http.dll
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\System.Net.Http.xml
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\normidna.nlp
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\normnfc.nlp
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\normnfd.nlp
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\normnfkc.nlp
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\bin\Debug\normnfkd.nlp
+J:\Documents\ME578\Lab 6\MIDACO_beam_optimizer\MIDACO_beam_optimizer\obj\Debug\MIDACO_beam_optimizer.csprojResolveAssemblyReference.cache
