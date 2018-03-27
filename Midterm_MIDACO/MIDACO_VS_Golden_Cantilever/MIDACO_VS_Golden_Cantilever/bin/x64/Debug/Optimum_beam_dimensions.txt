@@ -1,0 +1,6 @@
+Volume of Optimal Beam = 0.1309m^3
+Length = 10m
+Max Stress = 11319457063.048Pa
+Thickness = 0.1m
+HeightA = 0.1m
+HeightB = 0.161m

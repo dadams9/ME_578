@@ -1,0 +1,542 @@
+
+ ANSYS Academic Research                           
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *            ANSYS Release 18.1     LEGAL NOTICES             *
+ ***************************************************************
+ *                                                             *
+ * Copyright 2017 SAS IP, Inc.  All rights reserved.           *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2008 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ Release 18.1
+     
+ Point Releases and Patches installed:   
+     
+ ANSYS, Inc. Products Release 18.1   
+ ANSYS Mechanical Products Release 18.1  
+ ANSYS Customization Files for User Programmable Features Release 18.1   
+ ANSYS Autodyn Release 18.1  
+ ANSYS LS-DYNA Release 18.1  
+ ANSYS AIM Release 18.1  
+ ANSYS CFX (includes ANSYS CFD-Post) Release 18.1
+ ANSYS Fluent (includes ANSYS CFD-Post) Release 18.1 
+ ANSYS TurboGrid Release 18.1
+ ANSYS FENSAP-ICE Release 18.1   
+ ANSYS Polyflow (includes ANSYS CFD-Post) Release 18.1   
+ ANSYS CFD-Post only Release 18.1
+ ANSYS Forte Release 18.1
+ ANSYS Chemkin Release 18.1  
+ ANSYS ICEM CFD Release 18.1 
+ ANSYS Aqwa Release 18.1 
+ ANSYS Viewer Release 18.1   
+ ANSYS Icepak (includes ANSYS CFD-Post) Release 18.1 
+ ANSYS Remote Solve Manager Standalone Services Release 18.1 
+ AutoCAD Release 18.1
+ ACIS Release 18.1   
+ Catia, Version 4 Release 18.1   
+ Catia, Version 5 Release 18.1   
+ Catia, Version 6 Release 18.1   
+ Creo Elements/Direct Modeling Release 18.1  
+ Inventor Release 18.1   
+ JTOpen Release 18.1 
+ NX Release 18.1 
+ Parasolid Release 18.1  
+ Creo Parametric Release 18.1
+ Solid Edge Release 18.1 
+ SolidWorks Release 18.1 
+ ANSYS, Inc. License Manager Release 18.1
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  DESIGNXPLORER REQUESTED
+
+ RELEASE= Release 18.1         BUILD= 18.1      UP20170403   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file  10:31:20  MAR 27, 2018 CP=      0.203
+
+     1  /NOPR   ! Suppress printing of UNDO process 
+     2  /PMACRO ! Echo following commands to log
+     3  FINISH  ! Make sure we are at BEGIN level   
+     4  /CLEAR,NOSTART  ! Clear model since no SAVE found   
+     5  ! WE SUGGEST YOU REMOVE THIS LINE AND THE FOLLOWING STARTUP LINES   
+     6  !*  
+     7  /AUX15  
+     8  !*  
+     9  /CWD,'J:\Documents\ME578\Midterm\Working_Directory\'
+    10  IOPTN,IGES,SMOOTH   
+    11  IOPTN,MERGE,YES 
+    12  IOPTN,SOLID,YES 
+    13  IOPTN,SMALL,YES 
+    14  IOPTN,GTOLER, DEFA  
+    15  IGESIN,'Optimized_beam','igs','J:\Documents\ME578\Midterm\Working_Directory'
+    16  VPLOT   
+    17  !*  
+    18  FINISH  
+    19  /PREP7  
+    20  !*  
+    21  ET,1,SOLID186   
+    22  !*  
+    23  !*  
+    24  MPTEMP,,,,,,,,  
+    25  MPTEMP,1,0  
+    26  MPDATA,EX,1,,300e9  
+    27  MPDATA,PRXY,1,,0.45 
+    28  CM,_Y,VOLU  
+    29  VSEL, , , ,       1 
+    30  CM,_Y1,VOLU 
+    31  CHKMSH,'VOLU'   
+    32  CMSEL,S,_Y  
+    33  !*  
+    34  VSWEEP,_Y1  
+    35  !*  
+    36  CMDELE,_Y   
+    37  CMDELE,_Y1  
+    38  CMDELE,_Y2  
+    39  !*  
+    40  NSEL,ALL
+    41      
+    42      
+    43      
+    44      
+    45      
+    46  !* Select nodes on base of cantilever to set displacement to 0  
+    47  *GET,Min_xloc,NODE,0,MNLOC,X,,  
+    48  NSEL,S,LOC,X,(Min_xloc-1),(Min_xloc+1),,0   
+    49  /GO 
+    50  D,ALL, ,0, , , ,ALL, , , , ,
+    51  NSEL,ALL
+    52      
+    53  !* Select nodes on end of cantilever to apply load to   
+    54  *GET,Max_xloc,NODE,0,MXLOC,X,,  
+    55  NSEL,S,LOC,X,(Max_xloc-1),(Max_xloc+1),,0   
+    56  *GET,numnodes1,NODE,0,COUNT 
+    57  /GO 
+    58  F,ALL,FY,(-500000)/numnodes1
+    59  NSEL,ALL
+    60      
+    61      
+    62  !* Select nodes on base of cantilever to set displacement to 0  
+    63  *GET,Min_xloc,NODE,0,MNLOC,X,,  
+    64  NSEL,S,LOC,X,(Min_xloc-1),(Min_xloc+1),,0   
+    65  /GO 
+    66  D,ALL, ,0, , , ,ALL, , , , ,
+    67  NSEL,ALL
+    68      
+    69      
+    70  FINISH  
+    71  /SOL
+    72  /STATUS,SOLU
+    73  SOLVE   
+    74  /SHOW   
+    75  FINISH  
+    76  /POST1  
+    77  !*  
+    78  /EFACET,1   
+    79  PLNSOL, S,EQV, 0,1.0
+    80      
+    81  *GET,Max_stress,PLNSOL,0,MAX
+    82  !*CFOPEN, 'J:\Documents\ME578\Midterm\Ansys_Midterm_output_file', 'txt',,   
+    83  *CFOPEN, 'Ansys_Midterm_output_file', 'txt',,   
+    84  *VWRITE,Max_stress  
+    85  (F20.4) 
+    86  *CFCLOS 
+    87      
+    88  !Save the von mises stress contour plot 
+    89  /SHOW,JPEG,,0   
+    90  JPEG,QUAL,75,   
+    91  JPEG,ORIENT,HORIZ   
+    92  JPEG,COLOR,2
+    93  JPEG,TMOD,1 
+    94  /GFILE,800, 
+    95  /REPLOT 
+    96      
+    97  )/GOP    ! Resume printing after UNDO process   
+    98  )! We suggest a save at this point  
+    99      
+
+ RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\v181\ANSYS\apdl\start.ans
+
+ /INPUT FILE= C:\Program Files\ANSYS Inc\v181\ANSYS\apdl\start.ans  LINE=       0
+
+ CLEAR ANSYS DATABASE AND RESTART
+
+ ANSYS Academic Research                           
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 18.1     18.1     ***
+ ANSYS Academic Research                           
+ 00242271  VERSION=WINDOWS x64   10:31:20  MAR 27, 2018 CP=      0.297
+
+                                                                               
+
+
+
+                    ***** INPUT DATA FILE CONVERSION UTILITY (AUX15) *****
+
+ *** NOTE *** Display device has not yet been specified with the /SHOW command.  Display commands ignored. 
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.312
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 18.1     18.1     ***
+ ANSYS Academic Research                           
+ 00242271  VERSION=WINDOWS x64   10:31:20  MAR 27, 2018 CP=      0.312
+
+                                                                               
+
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO         644 BY           1
+ REAL=  0.00000000       IMAG=  0.00000000    
+ ADDITIONAL DOFS=  UY    UZ  
+
+ ALL SELECT   FOR ITEM=NODE COMPONENT=    
+  IN RANGE         1 TO        644 STEP          1
+
+        644  NODES (OF        644  DEFINED) SELECTED BY NSEL  COMMAND.
+
+ *GET  MAX_XLOC  FROM  NODE  ITEM=MXLO X     VALUE=  10.0000000     
+
+ SELECT       FOR ITEM=LOC  COMPONENT=X     BETWEEN  9.0000     AND   11.000    
+   KABS=  0.  TOLERANCE= 0.200000E-07
+
+         82  NODES (OF        644  DEFINED) SELECTED BY  NSEL  COMMAND.
+
+ *GET  NUMNODES1  FROM  NODE  ITEM=COUN       VALUE=  82.0000000     
+
+ SPECIFIED NODAL LOAD FY   FOR SELECTED NODES         1 TO      644 BY        1
+  REAL= -6097.56098       IMAG=  0.00000000    
+
+ ALL SELECT   FOR ITEM=NODE COMPONENT=    
+  IN RANGE         1 TO        644 STEP          1
+
+        644  NODES (OF        644  DEFINED) SELECTED BY NSEL  COMMAND.
+
+ *GET  MIN_XLOC  FROM  NODE  ITEM=MNLO X     VALUE=  0.00000000     
+
+ SELECT       FOR ITEM=LOC  COMPONENT=X     BETWEEN -1.0000     AND   1.0000    
+   KABS=  0.  TOLERANCE= 0.200000E-07
+
+         82  NODES (OF        644  DEFINED) SELECTED BY  NSEL  COMMAND.
+
+ SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO         644 BY           1
+ REAL=  0.00000000       IMAG=  0.00000000    
+ ADDITIONAL DOFS=  UY    UZ  
+
+ ALL SELECT   FOR ITEM=NODE COMPONENT=    
+  IN RANGE         1 TO        644 STEP          1
+
+        644  NODES (OF        644  DEFINED) SELECTED BY NSEL  COMMAND.
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.312
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .DEFAULT
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       0.312   TIME= 10:31:20
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE    1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED.
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 18.1     18.1     ***
+ ANSYS Academic Research                           
+ 00242271  VERSION=WINDOWS x64   10:31:20  MAR 27, 2018 CP=      0.312
+
+                                                                               
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.312   TIME= 10:31:20
+ Present time 0 is less than or equal to the previous time.  Time will   
+ default to 1.                                                           
+
+ *** NOTE ***                            CP =       0.312   TIME= 10:31:20
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 6.782745224E+11 at element 6.                                 
+ Minimum = 4.730682063E+11 at element 74.                                
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        90  SOLID186      0.062   0.000694
+ Time at end of element matrix formulation CP = 0.375.                   
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =        1686,    Maximum wavefront =    180
+  Memory allocated for solver              =     5.975 MB
+  Memory required for in-core solution     =     5.769 MB
+  Memory required for out-of-core solution =     3.695 MB
+
+ *** NOTE ***                            CP =       0.484   TIME= 10:31:20
+ The Sparse Matrix Solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 1.614204479E+12 at node 552 UY.            
+ Sparse solver minimum pivot= 317737986 at node 491 UZ.                  
+ Sparse solver minimum pivot in absolute value= 317737986 at node 491    
+ UZ.                                                                     
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        90  SOLID186      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        90  SOLID186      0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        1.250 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        0.500 MB WRITTEN ON RESULTS FILE: file.rst
+
+ /SHOW SWITCH PLOTS TO FILE file.grph         - RASTER MODE.
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.047
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 18.1     18.1     ***
+ ANSYS Academic Research                           
+ 00242271  VERSION=WINDOWS x64   10:31:21  MAR 27, 2018 CP=      1.047
+
+                                                                               
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ *** NOTE ***                            CP =       1.047   TIME= 10:31:21
+ Reading results into the database (SET command) will update the current 
+ displacement and force boundary conditions in the database with the     
+ values from the results file for that load set.  Note that any          
+ subsequent solutions will use these values unless action is taken to    
+ either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+ Element faceting set to 1 facets per edge.
+
+ DISPLAY NODAL SOLUTION,  ITEM=S     COMP=EQV               
+
+ CUMULATIVE DISPLAY NUMBER   1 WRITTEN TO FILE file.grph         - RASTER MODE.
+ DISPLAY TITLE= 
+                                                                         
+
+ *GET  MAX_STRESS  FROM PLNSOL ITEM=MAX        VALUE=  13877624.3    
+
+ OPENED FILE= Ansys_Midterm_output_file.txt FOR COMMAND FILE DATA 
+
+
+  COMMAND FILE CLOSED 
+
+
+ /SHOW SWITCH PLOTS TO  JPEG        - RASTER MODE.
+
+ JPEG quality setting =  75
+
+ JPEG orientation is horizontal  
+
+ JPEG pixels are in color       
+
+ JPEG characters are bitmaps     
+
+ GRAPHICS FILE PIXEL RESOLUTION =    800
+
+ DISPLAY NODAL SOLUTION,  ITEM=S     COMP=EQV               
+
+ CUMULATIVE DISPLAY NUMBER   1 WRITTEN TO FILE file001.jpg       - RASTER MODE.
+ DISPLAY TITLE= 
+                                                                         
+
+ PRINTOUT RESUMED BY /GOP
+
+ ***** END OF INPUT ENCOUNTERED *****
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
+
+
+ ***** PROBLEM TERMINATED BY INDICATED ERROR(S) OR BY END OF INPUT DATA *****
+
+ *** NOTE ***
+ ANSYS JPEG software is based in part on the work of the Independent JPEG Group.
+ IJG Version 6b  27-Mar-1998  Copyright (C) 1998, Thomas G. Lane
+
++--------------------- A N S Y S   S T A T I S T I C S ------------------------+
+
+Release: Release 18.1       Build: 18.1       Update: UP20170403   Platform: WINDOWS x64 
+Date Run: 03/27/2018   Time: 10:31     Process ID: 6572
+Operating System: Windows 10  (Build: 14393)
+
+Processor Model: Intel(R) Xeon(R) CPU E3-1585L v5 @ 3.00GHz
+
+Compiler: Intel(R) FORTRAN Compiler Version 15.0.7  (Build: 20160518)
+          Intel(R) C/C++ Compiler Version 15.0.7  (Build: 20160518)
+          Intel(R) Math Kernel Library Version 11.3.3 Product Build 20160413
+
+Number of machines requested            :    1
+Total number of cores available         :    0
+Number of physical cores available      :    0
+Number of processes requested           :    1
+Number of threads per process requested :    2
+Total number of cores requested         :    2 (Shared Memory Parallel)                    
+
+GPU Acceleration: Not Requested
+
+Job Name: file
+Working Directory: J:\Documents\ME578\Midterm\Midterm_MIDACO\MIDACO_VS_Golden_Cantilever\MIDACO_VS_Golden_Cantilever\bin\x64\Debug
+
+Total CPU time for main thread                    :        0.6 seconds
+Total CPU time summed for all threads             :        1.1 seconds
+
+Elapsed time spent pre-processing model (/PREP7)  :        0.1 seconds
+Elapsed time spent solution - preprocessing       :        0.0 seconds
+Elapsed time spent computing solution             :        0.3 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+ 
+Equation solver used                              :            Sparse (symmetric)
+Equation solver computational rate                :     1036.1 Mflops
+
+Maximum total memory used                         :       39.0 MB
+Maximum total memory allocated                    :     2112.0 MB
+Total physical memory available                   :         16 GB
+
++------------------ E N D   A N S Y S   S T A T I S T I C S -------------------+
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                            ANSYS RUN COMPLETED                            |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Ansys Release 18.1          Build 18.1         UP20170403     WINDOWS x64 |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
+ | Maximum Database Used       2 MB    Maximum Scratch Memory Used     37 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =          1.109       Time  =  10:31:22        |
+ |        Elapsed Time (sec) =          4.000       Date  =  03/27/2018      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*
