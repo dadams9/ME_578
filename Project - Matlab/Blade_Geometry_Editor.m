@@ -206,15 +206,20 @@ for kkk = 1:length(DOE_num)
         plot3(x,y,z,'k')
         hold on
     end
+    saveas(figure(2),['New_Blade_Figures/New_Blade_',num2str(kkk),'.fig'])
+    saveas(figure(2),['New_Blade_Figures/New_Blade_',num2str(kkk),'.png'])
     %%
     %Write new blade ESTG file for Star CCM
     
+    %Location to write the output file to
+    STARCCM_file_location = ['Star_CCM_geometries'];
+    
     %Name of the file to output
-    outputfile = ['new_blade_',num2str(DOE_num(kkk)),'.estg'];
+    STARCCM_filename = ['new_blade_',num2str(DOE_num(kkk)),'.estg'];
     
     %Output all of the desired information into an estg file formatted the same
     %as the base blade file
-    fID = fopen(outputfile,'w');
+    fID = fopen(STARCCM_filename,'w');
     fprintf(fID, '# nstart %1i\n', 3);
     fprintf(fID, '# nspt %1i\n', 36);
     fprintf(fID, '# iang %1i\n', 0);
@@ -243,8 +248,17 @@ for kkk = 1:length(DOE_num)
     
     fclose(fID);
     
+    %Determine file location
+    movefile(STARCCM_filename, STARCCM_file_location);
+    
+
+    
     %%
-    %Write the NX input file for the new blade
+    
+    %Location to write the output file to
+    NX_file_location = ['NX_geometries'];
+    
+    %Name of file to write
     NX_filename = ['NX_new_blade', num2str(DOE_num(kkk)),'.txt'];
     fid = fopen(NX_filename,'w');
     fprintf(fid,'SaveNum %i\n', DOE_num(kkk));
@@ -262,6 +276,13 @@ for kkk = 1:length(DOE_num)
         fprintf(fid, 'pafOff\t%4.4f\n',pafOff(kkk,i));
         fprintf(fid, 'pheight\t%4.4f\n',pheight(kkk,i)/bHeight(kkk));
     end
+    
     fclose(fid);
+    
+    %Determine file location
+    movefile(NX_filename, NX_file_location);
+    
+
+
     
 end

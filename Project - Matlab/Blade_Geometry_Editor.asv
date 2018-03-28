@@ -33,15 +33,19 @@ load('DOE_output_percentages.txt');
 DOE_num = DOE_output_percentages(:,1);
 numSecs = DOE_output_percentages(:,2);
 
+%--------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 %Assign the fixed blade parameters to each of the variables for output
 %later. Comment this out if the blade dimensions are being altered.
 for i=1:length(DOE_num)
     bChord(i) = 5;
     bTwist(i) = 30;
-    bChordWOffset(i) = 0;
-    bFAOffset(i) = 0;
+    bChordWOffset(i) = 1;
+    bFAOffset(i) = 1;
     bHeight(i) = 5;
 end
+%--------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 for i=1:length(numSecs)
     pchord(i,1:numSecs(i)) = DOE_output_percentages(i,3:7);
@@ -87,7 +91,7 @@ for kkk = 1:length(DOE_num)
     Air_Foil(1,2,:) = baseblade(:,1);
     Air_Foil(1,3,:) = baseblade(:,2);
     
-    %Copy of the origina
+    %Copy of the original Airfoil geometry to manipulate later
     Air_Foil_Original = Air_Foil;
     
     %%
@@ -153,7 +157,6 @@ for kkk = 1:length(DOE_num)
     if numSecs(kkk) > 1
     for nnn = 1:numSecs(kkk)
         for i=1:length(Air_Foil(1,1,:))
-%             Air_Foil(nnn,1,i) = (nnn-1)*bHeight(kkk)/(numSecs(kkk)-1);
             Air_Foil(nnn,1,i) = pheight(kkk,nnn);
             Air_Foil(nnn,2,i) = Air_Foil(1,2,i);
             Air_Foil(nnn,3,i) = Air_Foil(1,3,i);
@@ -166,11 +169,20 @@ for kkk = 1:length(DOE_num)
     %percentage of twist for the give cross section. 
     if numSecs(kkk) > 1
     for nnn = 1:numSecs(kkk)
+        %Define cos and sin values for the transformation
         c = cosd(bTwist(kkk)*ptwist(kkk,nnn));
         s = sind(bTwist(kkk)*ptwist(kkk,nnn));
+        
+        %Define the chord transformation
         chord_trans = bChord(kkk)*pchord(kkk,nnn);
+        
+        %Define the chord offset transformation
         chord_off_trans = bChordWOffset(kkk)*pcwOff(kkk,nnn);
+        
+        %Define the AF offset transformation
         af_off_trans = bFAOffset(kkk)*pafOff(kkk,nnn);
+        
+        %Apply all transformations to each point for each cross section
         for i=1:length(Air_Foil(1,1,:))
             Air_Foil(nnn,1,i) = pheight(kkk,nnn);
             Air_Foil(nnn,2,i) = ((Air_Foil_Original(1,2,i)*c-Air_Foil_Original(1,3,i)*s)*chord_trans)+chord_off_trans;
@@ -196,6 +208,9 @@ for kkk = 1:length(DOE_num)
     end
     %%
     %Write new blade ESTG file for Star CCM
+    
+    %Location to write the output file to
+    STARCCM_file_location = ['Star_CCM_geometries'];
     
     %Name of the file to output
     outputfile = ['new_blade_',num2str(DOE_num(kkk)),'.estg'];
@@ -231,8 +246,17 @@ for kkk = 1:length(DOE_num)
     
     fclose(fID);
     
+    %Determine file location
+    movefile(TF_outputfile, outputfile_location);
+    
+
+    
     %%
-    %Write the NX input file for the new blade
+    
+    %Location to write the output file to
+    NX_file_location = ['NX_geometries'];
+    
+    %Name of file to write
     NX_filename = ['NX_new_blade', num2str(DOE_num(kkk)),'.txt'];
     fid = fopen(NX_filename,'w');
     fprintf(fid,'SaveNum %i\n', DOE_num(kkk));
@@ -250,6 +274,13 @@ for kkk = 1:length(DOE_num)
         fprintf(fid, 'pafOff\t%4.4f\n',pafOff(kkk,i));
         fprintf(fid, 'pheight\t%4.4f\n',pheight(kkk,i)/bHeight(kkk));
     end
+    
     fclose(fid);
+    
+    %Determine file location
+    movefile(NX_filename, NX_file_location);
+    
+
+
     
 end
